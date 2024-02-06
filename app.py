@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///path/to/database.db'
 db = SQLAlchemy(app)
 
 class Hashword(db.Model):
@@ -63,7 +63,7 @@ def dashboard():
         return redirect(url_for('index'))
 
 def generate_concatenated_text():
-    with open('/Users/samanthabrown/Desktop/word_options.txt', 'r') as file:
+    with open('passpull.txt', 'r') as file:
         all_lines = file.read()
 
     if all_lines.count('\n') >= 4:
