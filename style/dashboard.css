@@ -18,6 +18,7 @@ body {
 .main-content {
   flex-grow: 1;
   padding: 20px;
+  margin-top: -45px;
 }
 
 h1 {
@@ -281,4 +282,12 @@ header {
 
 .logout-button:hover {
   background-color: darkred; /* Darken the background color on hover */
+}
+
+#passwordBtn:hover {
+  background-color: #39b7ff;
+}
+
+#passphraseBtn:hover {
+  background-color: #39b7ff;
 }
