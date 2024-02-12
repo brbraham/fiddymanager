@@ -1,0 +1,284 @@
+body {
+  margin: 0;
+  font-family: "Roboto Thin", sans-serif;
+  background-color: #0c1c29;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #182b3b;
+  padding: 20px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: normal;
+  color: #fff;
+}
+
+.form-container {
+  background-color: #253d52;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.input-container input,
+.input-container button {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #364b5c;
+  color: #fff;
+  margin-right: 10px;
+  width: auto;
+}
+
+.input-container input {
+  flex: 1; /* Fill remaining space */
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #39b7ff;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.create-button {
+  background-color: #39b7ff;
+  color: #fff;
+}
+
+.create-button:hover {
+  background-color: #7cdd6d;
+}
+
+.button-group button {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.sorting-options {
+  margin-bottom: 20px;
+}
+
+.sorting-options label {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.sorting-options select {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #364b5c;
+  color: #fff;
+}
+
+.password-list-container {
+  background-color: #253d52;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.password-list-header {
+  margin-bottom: 10px;
+}
+
+.password-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.password-row {
+  display: flex;
+  align-items: center;
+}
+
+.data {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #bf616a;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 500px;
+  pointer-events: none;
+}
+
+.header-image {
+  align-self: center;
+}
+
+.i {
+  background-color: none;
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 998;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #0c1c29;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.modal-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#okButton {
+  background-color: #39b7ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#okButton:hover {
+  background-color: #0054b4;
+}
+
+/* Add this class to your body or main content wrapper when the modal is displayed */
+.blur-background {
+  filter: blur(15px);
+}
+
+/* Initial state, no blur */
+.content-wrapper {
+  transition: filter 0.3s ease; /* Smooth transition for the blur effect */
+}
+
+/* Blurred state */
+.blur-background .content-wrapper {
+  filter: blur(300px);
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999; /* High z-index to ensure it's on top */
+}
+
+/* When modal is displayed */
+.modal.show {
+  display: block;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #182b3b;
+  border: 2px solid #333;
+  padding: 20px;
+  z-index: 9999;
+  max-width: 80%;
+}
+
+/* Style for the close button */
+.close {
+  background-color: black;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.blur {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+.unblur-on-hover:hover td:nth-child(3) {
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+}
+header {
+  display: flex; /* Use flexbox to control layout */
+  justify-content: space-between; /* Space items evenly across the header */
+  align-items: center; /* Align items vertically in the center */
+  padding: 10px; /* Add padding to the header */
+}
+
+/* Styles for the logout button */
+.user-info-container button {
+  margin-left: 10px; /* Add margin to create space between the email and the button */
+}
+
+/* Styles for the logout button */
+.logout-button {
+  margin-left: 10px; /* Add margin to create space between the email and the button */
+  background-color: #c30010; /* Set background color to red */
+  color: white; /* Set text color to white */
+  border: none; /* Remove border */
+  padding: 8px 16px; /* Add padding */
+  border-radius: 4px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.logout-button:hover {
+  background-color: darkred; /* Darken the background color on hover */
+}

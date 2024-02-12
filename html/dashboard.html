@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Manager</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header><img src="https://i.ibb.co/6gnYtvy/FM.png" alt="Logo" class="logo-image">
+    <div class="user-info-container">
+        <span id="userEmail"></span> <!-- Container for user's email -->
+        <button class="logout-button" onclick="logout()">Logout</button> <!-- Logout button -->
+      </div>
+</header>
+<div class="content-wrapper">
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+        <div class="hidden" id="timer-wrapper"><span id="time"></span></div>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        </head>
+
+        <body>
+
+          <button class="button" onclick="openPopup()">About Us</button>
+          <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>About Us:</p>
+            <ul>
+              <li> It seems like just last week we were coming together in an effort to help change the world through security software. From LA to Europe and even mythical places like Ohio, we have crafted the most elite team of entry level Cybersecurity professionals. Our steadfast dedication to keeping your passwords secure and even helping you create more secure passwords than you could ever imagine still remains our top priority.</li>
+              </li>Have you met someone that seems to have it all? The beard, the Texas accent, the perfect tan, etc and just wanted to scream into your zoom meeting "SLIDE ME A FIDDY"? With our state of the art password generation and security website you can quickly gain the confidence to achieve anything and know it will be safely password protected. Start the next chapter of your life today with team Slide me a Fiddy and we guarantee you will become slightly more interesting</li>
+            </ul>
+          </div>
+      </div>
+      <div class="main-content">
+        <h1>Password Manager</h1>
+        <div class="form-container">
+          <div class="input-container">
+            <label for="website">Website:</label>
+            <input type="text" id="website" placeholder="Enter website">
+          </div>
+          <div class="input-container">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username">
+          </div>
+          <div class="input-container">
+            <label>Password Type:</label>
+            <div class="button-group">
+              <button class="button" id="passwordBtn" onclick="generatePassword()">Password</button>
+              <button class="button" id="passphraseBtn" onclick="generatePassphrase()">Passphrase</button>
+
+              <button class="button create-button" onclick="addSam()" id="createBtn">Create New Password</button>
+            </div>
+          </div>
+        </div>
+        <div class="sorting-options">
+          <label for="sorting">Sort by:</label>
+          <select id="sorting">
+            <option value="newest">Newest to Oldest</option>
+            <option value="oldest">Oldest to Newest</option>
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+          </select>
+        </div>
+        <div class="spacer"></div>
+        <div class="password-list-container" id="passwordListContainer">
+          <div class="password-list-header">
+            <h2>Existing Passwords:</h2>
+          </div>
+          <div class="password-list" id="passwordList">
+            <table id="data-table">
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>Created</th>
+                  <th>Expires</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rows will be added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</div>
+</div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <p>For security purposes due to inactivity you will be returned to the login screen.</p>
+    <button id="okButton">OK</button>
+  </div>
+</div>
+<script src="scripts.js"></script>
+</html>
