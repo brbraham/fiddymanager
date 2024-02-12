@@ -92,9 +92,7 @@ function displaySams() {
     const deleteCell = row.insertCell();
     deleteCell.innerHTML = `<button onclick="deleteSam(${index})"><i class="fa fa-trash"></i></button>`;
   });
-
   // Add an event listener to the sorting select element
-  // ... (remaining code)
 }
 
 // Add an event listener to the sorting select element
@@ -298,6 +296,17 @@ function addSam() {
   // Reset button colors
   document.getElementById("passwordBtn").style.backgroundColor = "";
   document.getElementById("passphraseBtn").style.backgroundColor = "";
+}
+
+function logout() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    // Redirect the user to the login page or perform any other action after logout.
+    window.location.href = "login.html";
+  }).catch(function(error) {
+    // An error happened.
+    console.error("Logout error:", error);
+  });
 }
 
 const characters =

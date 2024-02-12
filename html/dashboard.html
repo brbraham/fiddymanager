@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password Manager</title>
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="/style/dashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <header><img src="https://i.ibb.co/6gnYtvy/FM.png" alt="Logo" class="logo-image">
     <div class="user-info-container">
-        <span id="userEmail"></span> <!-- Container for user's email -->
-        <button class="logout-button" onclick="logout()">Logout</button> <!-- Logout button -->
+        <span id="userEmail"></span>
+        <button class="logout-button" onclick="logout()">Logout</button>
       </div>
 </header>
 <div class="content-wrapper">
@@ -34,8 +34,15 @@
             <span class="close" onclick="closePopup()">&times;</span>
             <p>About Us:</p>
             <ul>
-              <li> It seems like just last week we were coming together in an effort to help change the world through security software. From LA to Europe and even mythical places like Ohio, we have crafted the most elite team of entry level Cybersecurity professionals. Our steadfast dedication to keeping your passwords secure and even helping you create more secure passwords than you could ever imagine still remains our top priority.</li>
-              </li>Have you met someone that seems to have it all? The beard, the Texas accent, the perfect tan, etc and just wanted to scream into your zoom meeting "SLIDE ME A FIDDY"? With our state of the art password generation and security website you can quickly gain the confidence to achieve anything and know it will be safely password protected. Start the next chapter of your life today with team Slide me a Fiddy and we guarantee you will become slightly more interesting</li>
+              <li> It seems like just last week we were coming together in an effort to help change the world through security software. 
+                From LA to Europe and even mythical places like Ohio, we have crafted the most elite team of entry level Cybersecurity professionals. 
+                Our steadfast dedication to keeping your passwords secure and even helping you create more secure 
+                passwords than you could ever imagine still remains our top priority.</li>
+              </li>Have you met someone that seems to have it all? 
+              The beard, the Texas accent, the perfect tan, etc and just wanted to scream into your 
+              zoom meeting "SLIDE ME A FIDDY"? With our state of the art password generation and security website you can 
+              quickly gain the confidence to achieve anything and know it will be safely password protected. 
+              Start the next chapter of your life today with team Slide me a Fiddy and we guarantee you will become slightly more interesting</li>
             </ul>
           </div>
       </div>
@@ -55,7 +62,6 @@
             <div class="button-group">
               <button class="button" id="passwordBtn" onclick="generatePassword()">Password</button>
               <button class="button" id="passphraseBtn" onclick="generatePassphrase()">Passphrase</button>
-
               <button class="button create-button" onclick="addSam()" id="createBtn">Create New Password</button>
             </div>
           </div>
@@ -95,7 +101,7 @@
       </div>
     </div>
 </div>
-<script src="script.js"></script>
+<script src="/scripts/scripts.js"></script>
 </body>
 </div>
 </div>
@@ -105,5 +111,4 @@
     <button id="okButton">OK</button>
   </div>
 </div>
-<script src="scripts.js"></script>
 </html>
