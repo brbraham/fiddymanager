@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to FiddyManager</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style/login.css" />
+    <!-- Firebase SDK imports and configuration -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js"></script>
+  </head>
+  <body>
+    <div class="container" id="loginContainer">
+      <img src="https://i.ibb.co/6gnYtvy/FM.png" alt="Logo" class="logo" />
+      <h1>Welcome back.</h1>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <div class="error-text" id="errorText">
+          Incorrect password. Please try again.
+        </div>
+        <button type="submit" class="login">Login</button>
+        <div class="links">
+          <a href="#" class="forgot-password">Forgot Password?</a>
+          <a href="#" class="new-user-text">New User</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="container" id="newUserContainer" style="display: none">
+      <img src="https://i.ibb.co/6gnYtvy/FM.png" alt="Logo" class="logo" />
+      <h1>Let's get started.</h1>
+      <form id="createUserForm">
+        <input type="text" id="newUsername" placeholder="Username" required />
+        <input type="email" id="newUserEmail" placeholder="Email" required />
+        <input
+          type="password"
+          id="newUserPassword"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          id="confirmNewUserPassword"
+          placeholder="Confirm Password"
+          required
+        />
+        <div class="error-text" id="newUserErrorText"></div>
+        <button type="submit" class="login">Create Account</button>
+        <div class="links">
+          <a href="#" class="back-to-login">Back to Login</a>
+        </div>
+      </form>
+
+      <p id="successMessage" style="display: none; color: green"></p>
+      <p id="errorText" style="display: none; color: red"></p>
+    </div>
+    <script src="/scripts/scripts.js"></script>
+  </body>
+</html>
