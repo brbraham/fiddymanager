@@ -129,3 +129,15 @@ body {
   font-size: 16px;
   margin-bottom: 15px;
 }
+
+.sidebar {
+  width: 150px;
+  background-color: #182b3b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.about-us-link a {
+  color: white;
+  text-decoration: none;
+}
