@@ -19,11 +19,14 @@ body {
 h1 {
   font-weight: normal;
   color: #fff;
+  margin-bottom: 16px;
+  margin-top: -30px;
 }
 
 .employee {
   text-align: center;
   box-sizing: border-box;
+  min-width: 400px;
 }
 
 .employee img {
@@ -34,24 +37,19 @@ h1 {
   object-fit: cover;
 }
 
-.employee-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: auto;
-}
-
 .job-title {
-  font-weight: bold;
+  color: #39b7ff;
+  font-weight: 800;
 }
 
-.social-links {
-  margin-top: 10px;
+.employee-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.social-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0 10px;
+.employee-container > div {
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .sidebar {
@@ -62,9 +60,7 @@ h1 {
 }
 
 .main-content {
-  flex-grow: 1;
-  padding: 20px;
-  margin-top: -45px;
+  display: flex;
 }
 
 .logo-image {
@@ -82,28 +78,23 @@ h1 {
   align-self: center;
 }
 
-.i {
-  background-color: none;
-  color: white;
+.fa-linkedin-square {
+  color: #39b7ff;
 }
 
+
 .logout-button {
-  margin-left: 10px;
-  background-color: #c30010;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
+  margin-left: 10px; /* Add margin to create space between the email and the button */
+  background-color: #c30010; /* Set background color to red */
+  border: none; /* Remove border */
+  padding: 8px 14px; /* Add padding */
+  border-radius: 4px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  color: white; /* Set text color to white */
 }
 
 .logout-button:hover {
-  background-color: darkred;
-}
-
-.about-us-link a {
-  color: white;
-  text-decoration: none;
+  background-color: darkred; /* Darken the background color on hover */
 }
 
 .modal {

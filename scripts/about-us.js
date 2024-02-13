@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("okButton").onclick = function () {
     hideModal();
     resetTimer();
-    // Uncomment the next line to redirect when modal OK is clicked
-    // window.location.href = "login.html";
+    logout();
   };
   setupInactivityTimer();
 });
@@ -90,6 +89,7 @@ function hideModal() {
 }
 
 function logout() {
+  window.location.href = "login.html";
   firebase
     .auth()
     .signOut()

@@ -156,6 +156,7 @@ function startTimer(duration) {
       clearInterval(interval);
       showModal();
       hideTimer();
+      logout();
     }
   }, 1000);
 }
@@ -201,26 +202,6 @@ function hideModal() {
   document
     .querySelector(".content-wrapper")
     .classList.remove("blur-background");
-}
-
-function resetPopup() {
-  var modal = document.getElementById("myModal");
-  if (modal.classList.contains("show")) {
-    modal.classList.remove("show");
-    document
-      .querySelector(".content-wrapper")
-      .classList.remove("blur-background");
-  }
-  if (document.getElementById("popup").style.display === "block") {
-    closePopup();
-  }
-}
-
-function openPopup() {
-  document.getElementById("popup").style.display = "block";
-}
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
 }
 
 passwordBtn.style.backgroundColor = "";
@@ -291,6 +272,7 @@ function addSam() {
 }
 
 function logout() {
+  window.location.href = "login.html";
   firebase
     .auth()
     .signOut()
@@ -619,7 +601,6 @@ const wordOptions = [
 
 function getCurrentUser() {
   const user = firebase.auth().currentUser;
-
   if (user) {
     return user;
   } else {
