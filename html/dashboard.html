@@ -7,6 +7,12 @@
   <title>Password Manager</title>
   <link rel="stylesheet" href="/style/dashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .about-us-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -17,8 +23,8 @@
       </a>
     </div>
     <div class="user-info-container">
-      <span id="userEmail"></span> <!-- <!-- Container for user's email -->
-      <button class="logout-button" onclick="logout()">Logout</button> <!-- Logout button -->
+      <span id="currentUser"></span>
+      <button class="logout-button" onclick="logout()">Logout</button>
     </div>
   </header>
   <div class="content-wrapper">
@@ -26,13 +32,10 @@
       <div class="sidebar">
         <h2>Sidebar</h2>
         <div class="hidden" id="timer-wrapper"><span id="time"></span></div>
-        <title>About Us</title>
-        </head>
         <div class="about-us-link">
           <a href="about-us.html" style="color: white;">About Us</a>
         </div>
       </div>
-
       <div class="main-content">
         <h1>Password Manager</h1>
         <div class="form-container">
@@ -49,6 +52,7 @@
             <div class="button-group">
               <button class="button" id="passwordBtn" onclick="generatePassword()">Password</button>
               <button class="button" id="passphraseBtn" onclick="generatePassphrase()">Passphrase</button>
+
               <button class="button create-button" onclick="addSam()" id="createBtn">Create New Password</button>
             </div>
           </div>
@@ -88,7 +92,7 @@
       </div>
     </div>
   </div>
-  <script src="/scripts/dashboard.js"></script>
+  <script src="script.js"></script>
 </body>
 </div>
 </div>

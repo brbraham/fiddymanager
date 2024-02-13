@@ -10,15 +10,16 @@ body {
 }
 
 .sidebar {
-  width: 250px;
+  width: 150px;
   background-color: #182b3b;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .main-content {
   flex-grow: 1;
   padding: 20px;
-  margin-top: -45px;
+  margin-top: -45px; /* Adjust the negative margin to move it higher up */
 }
 
 h1 {
@@ -29,29 +30,29 @@ h1 {
 .form-container {
   background-color: #253d52;
   border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 18px;
+  margin-bottom: 14px;
 }
 
 .input-container {
   display: inline-flex;
-  align-items: center;
   margin-bottom: 10px;
 }
 
 .input-container label {
   margin-right: 10px;
+  margin-top: 8px;
   flex-shrink: 0;
 }
 
 .input-container input,
 .input-container button {
-  padding: 8px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #364b5c;
   color: #fff;
-  margin-right: 10px;
+  margin-right: 8px;
   width: auto;
 }
 
@@ -84,6 +85,7 @@ h1 {
 }
 
 .button-group button {
+  /* background-color: background-color: #39b7ff;  Removed to test button options*/
   color: #fff;
   margin-right: 10px;
 }
@@ -107,27 +109,56 @@ h1 {
 
 .password-list-container {
   background-color: #253d52;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #182b3b;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .password-list-header {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  border-radius: 20px; /* Round the edges of the header */
+  overflow: hidden; /* Ensure border-radius takes effect */
 }
 
-.password-list ul {
-  list-style-type: none;
-  padding: 0;
+.password-list-header h2 {
+  margin: 10;
+  color: #fff;
 }
 
-.password-row {
+.password-list {
+  width: 100%; /* Scale the table to fill the container */
+}
+
+#data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#data-table th,
+#data-table td {
+  padding: 12px;
+  border: none;
+}
+
+#data-table th {
+  background-color: #39b7ff;
+  text-align: left;
+}
+
+#data-table td {
+  text-align: left;
+}
+
+.password-list-container {
   display: flex;
-  align-items: center;
-}
-
-.data {
-  flex: 1;
-  margin-right: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .delete-button {
@@ -141,7 +172,6 @@ h1 {
 
 .logo-image {
   width: 500px;
-  pointer-events: none;
 }
 
 .header-image {
@@ -193,6 +223,14 @@ h1 {
 
 #okButton:hover {
   background-color: #0054b4;
+}
+
+#passwordBtn:hover {
+  background-color: #39b7ff;
+}
+
+#passphraseBtn:hover {
+  background-color: #39b7ff;
 }
 
 /* Add this class to your body or main content wrapper when the modal is displayed */
@@ -250,18 +288,7 @@ h1 {
   color: transparent;
   text-shadow: 0 0 0 white;
 }
-.unblur-on-hover:hover td:nth-child(3) {
-  filter: blur(0);
-  -webkit-filter: blur(0);
-  -moz-filter: blur(0);
-  -o-filter: blur(0);
-  -ms-filter: blur(0);
-}
-
-.about-us-link a {
-  color: white;
-  text-decoration: none; /* Remove underline */
-}
+/* Styles for the header */
 header {
   display: flex; /* Use flexbox to control layout */
   justify-content: space-between; /* Space items evenly across the header */
@@ -270,34 +297,24 @@ header {
 }
 
 /* Styles for the logout button */
-.user-info-container button {
-  margin-left: 10px; /* Add margin to create space between the email and the button */
-}
-
-/* Styles for the logout button */
 .logout-button {
   margin-left: 10px; /* Add margin to create space between the email and the button */
   background-color: #c30010; /* Set background color to red */
-  color: white; /* Set text color to white */
   border: none; /* Remove border */
-  padding: 8px 16px; /* Add padding */
+  padding: 8px 14px; /* Add padding */
   border-radius: 4px; /* Add border radius */
   cursor: pointer; /* Change cursor to pointer on hover */
+  color: white; /* Set text color to white */
 }
 
 .logout-button:hover {
   background-color: darkred; /* Darken the background color on hover */
 }
 
-#passwordBtn:hover {
-  background-color: #39b7ff;
-}
-
-#passphraseBtn:hover {
-  background-color: #39b7ff;
-}
-
-.about-us-link a {
-  color: white;
-  text-decoration: none; /* Remove underline */
+.unblur-on-hover:hover td:nth-child(3) {
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
 }

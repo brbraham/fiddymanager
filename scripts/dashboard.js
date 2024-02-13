@@ -86,25 +86,20 @@ function displaySams() {
     if (passCell.innerText.match(/[a-zA-Z0-9]{8}/)) {
       passCell.classList.add("blur");
     } else if (passCell.innerText.trim() !== "") {
-      // Check if the password is not empty
       passCell.classList.add("blur");
     }
 
     const deleteCell = row.insertCell();
     deleteCell.innerHTML = `<button onclick="deleteSam(${index})"><i class="fa fa-trash"></i></button>`;
   });
-  // Add an event listener to the sorting select element
 }
 
-// Add an event listener to the sorting select element
 const sortingSelect = document.getElementById("sorting");
 sortingSelect.addEventListener("change", function () {
   displaySams();
 });
 
 function generatePassword() {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+=-";
   let password = "";
   for (let i = 0; i < 9; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
@@ -128,29 +123,28 @@ function saveData() {
 function loadData() {
   const data = localStorage.getItem("tableData");
   if (data) {
-    sams = JSON.parse(data); // Converts JSON string back to an array
-    displaySams(); // Function to display your table data
+    sams = JSON.parse(data);
+    displaySams();
   }
 }
 
 document.addEventListener("DOMContentLoaded", loadData);
 
 let timeout;
-let interval; // Global variable to keep track of the interval ID
-const inactivityDuration = 60 * 1000;
-const timerDisplay = document.querySelector("#time"); // Assuming this is your timer display element
+let interval;
+const inactivityDuration = 60 * 1000; // 60 second timeout
+const timerDisplay = document.querySelector("#time"); //
 function showTimer() {
-  if (timerDisplay) timerDisplay.style.display = "block"; // Show the timer display
+  if (timerDisplay) timerDisplay.style.display = "block";
 }
 function hideTimer() {
-  if (timerDisplay) timerDisplay.style.display = "none"; // Hide the timer display
+  if (timerDisplay) timerDisplay.style.display = "none";
 }
 function startTimer(duration) {
   let timer = duration,
     minutes,
     seconds;
-  showTimer(); // Make sure to show the timer when starting the countdown
-  // Clear existing interval to ensure no multiple intervals running
+  showTimer();
   clearInterval(interval);
   interval = setInterval(function () {
     minutes = parseInt(timer / 60, 10);
@@ -160,15 +154,15 @@ function startTimer(duration) {
     if (timerDisplay) timerDisplay.textContent = minutes + ":" + seconds;
     if (--timer < 0) {
       clearInterval(interval);
-      showModal(); // Your action when the timer expires
-      hideTimer(); // Hide the timer display once the countdown is complete
+      showModal();
+      hideTimer();
     }
   }, 1000);
 }
 function resetTimer() {
-  clearTimeout(timeout); // Clear the timeout
-  clearInterval(interval); // Also clear the interval to stop the countdown
-  hideTimer(); // Hide the timer immediately upon reset
+  clearTimeout(timeout);
+  clearInterval(interval);
+  hideTimer();
 
   timeout = setTimeout(function () {
     startTimer(inactivityDuration / 1000);
@@ -177,21 +171,13 @@ function resetTimer() {
 function setupInactivityTimer() {
   window.onload = resetTimer;
   document.onmousemove = resetTimer;
-  document.onkeypress = resetTimer;
   document.onclick = resetTimer;
-
-  // Reset the popup when the user becomes active
   document.onmousemove = function () {
-    resetTimer();
-  };
-  document.onkeypress = function () {
     resetTimer();
   };
   document.onclick = function () {
     resetTimer();
   };
-
-  // Initially hide the timer until it's needed
   hideTimer();
 }
 document.addEventListener("DOMContentLoaded", function () {
@@ -205,16 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showModal() {
   var modal = document.getElementById("myModal");
-  modal.classList.add("show"); // Show the modal
-  document.querySelector(".content-wrapper").classList.add("blur-background"); // Blur background
+  modal.classList.add("show");
+  document.querySelector(".content-wrapper").classList.add("blur-background");
 }
 
 function hideModal() {
   var modal = document.getElementById("myModal");
-  modal.classList.remove("show"); // Hide the modal
+  modal.classList.remove("show");
   document
     .querySelector(".content-wrapper")
-    .classList.remove("blur-background"); // Remove blur
+    .classList.remove("blur-background");
 }
 
 function resetPopup() {
@@ -230,16 +216,13 @@ function resetPopup() {
   }
 }
 
-// Function to open the popup
 function openPopup() {
   document.getElementById("popup").style.display = "block";
 }
-// Function to close the popup
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-// Set initial state of buttons
 passwordBtn.style.backgroundColor = "";
 passphraseBtn.style.backgroundColor = "";
 
@@ -270,7 +253,6 @@ function addSam() {
     "rgb(57, 183, 255)"
   ) {
     pass = generatePassword(1).toUpperCase();
-    console.log("GeneratePassword(1)");
   } else if (
     document.getElementById("passphraseBtn").style.backgroundColor ===
     "rgb(57, 183, 255)"
@@ -299,13 +281,11 @@ function addSam() {
   };
   sams.push(sam);
 
-  // Clear input fields
   document.getElementById("website").value = "";
   document.getElementById("username").value = "";
   saveData();
   displaySams();
 
-  // Reset button colors
   document.getElementById("passwordBtn").style.backgroundColor = "";
   document.getElementById("passphraseBtn").style.backgroundColor = "";
 }
@@ -320,7 +300,6 @@ function logout() {
       window.location.href = "login.html";
     })
     .catch(function (error) {
-      // An error happened.
       console.error("Logout error:", error);
     });
 }
@@ -637,3 +616,25 @@ const wordOptions = [
   "station",
   "window",
 ];
+
+function getCurrentUser() {
+  const user = firebase.auth().currentUser;
+
+  if (user) {
+    return user;
+  } else {
+    return null;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentUser = getCurrentUser();
+  const currentUserElement = document.getElementById("currentUser");
+  if (currentUser && currentUser.email) {
+    currentUserElement.textContent =
+      "Currently logged in as: " + currentUser.email;
+  } else {
+    currentUserElement.textContent = "Not Logged In";
+    //window.location.href = "login.html";
+  }
+});
