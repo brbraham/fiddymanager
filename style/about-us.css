@@ -9,12 +9,6 @@ body {
   display: flex;
 }
 
-.employee-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: auto;
-}
-
 .sidebar {
   width: 150px;
   background-color: #182b3b;
@@ -38,6 +32,12 @@ h1 {
   border-radius: 50%;
   margin-bottom: 10px;
   object-fit: cover;
+}
+
+.employee-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
 }
 
 .job-title {
