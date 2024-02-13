@@ -14,9 +14,8 @@ body {
 
 .employee-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Create two columns */
-  gap: 20px; /* Space between grid items */
-  margin: auto; /* Center the container */
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
 }
 
 .sidebar {
@@ -76,10 +75,10 @@ body {
 }
 
 .header {
-  display: flex; /* Use flexbox to control layout */
-  justify-content: space-between; /* Space items evenly across the header */
-  align-items: center; /* Align items vertically in the center */
-  padding: 10px; /* Add padding to the header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .header-image {
@@ -92,22 +91,22 @@ body {
 }
 
 .logout-button {
-  margin-left: 10px; /* Add margin to create space between the email and the button */
-  background-color: #c30010; /* Set background color to red */
-  color: white; /* Set text color to white */
-  border: none; /* Remove border */
-  padding: 8px 16px; /* Add padding */
-  border-radius: 4px; /* Add border radius */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  margin-left: 10px;
+  background-color: #c30010;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .logout-button:hover {
-  background-color: darkred; /* Darken the background color on hover */
+  background-color: darkred;
 }
 
 .about-us-link a {
   color: white;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 }
 
 .modal {
