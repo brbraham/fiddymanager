@@ -257,6 +257,11 @@ h1 {
   -o-filter: blur(0);
   -ms-filter: blur(0);
 }
+
+.about-us-link a {
+  color: white;
+  text-decoration: none; /* Remove underline */
+}
 header {
   display: flex; /* Use flexbox to control layout */
   justify-content: space-between; /* Space items evenly across the header */
@@ -290,4 +295,9 @@ header {
 
 #passphraseBtn:hover {
   background-color: #39b7ff;
+}
+
+.about-us-link a {
+  color: white;
+  text-decoration: none; /* Remove underline */
 }
