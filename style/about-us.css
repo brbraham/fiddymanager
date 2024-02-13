@@ -3,9 +3,6 @@ body {
   background-color: #0c1c29;
   color: #fff;
   margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  justify-content: center;
 }
 
 .container {
@@ -23,6 +20,11 @@ body {
   background-color: #182b3b;
   padding: 20px;
   border-radius: 10px;
+}
+
+h1 {
+  font-weight: normal;
+  color: #fff;
 }
 
 .employee {
@@ -52,16 +54,11 @@ body {
   padding: 0 10px;
 }
 
-@media (max-width: 600px) {
-  .container {
-    grid-template-columns: 1fr; /* Switch to single column for small screens */
-  }
-}
-
 .sidebar {
-  width: 250px;
+  width: 150px;
   background-color: #182b3b;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .main-content {
