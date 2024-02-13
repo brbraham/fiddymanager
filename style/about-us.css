@@ -5,16 +5,25 @@ body {
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
-  display: flex;
   justify-content: center;
 }
 
 .container {
+  display: flex;
+}
+
+.employee-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Create two columns */
   gap: 20px; /* Space between grid items */
-  max-width: 960px;
   margin: auto; /* Center the container */
+}
+
+.sidebar {
+  width: 150px;
+  background-color: #182b3b;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .employee {
@@ -128,13 +137,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   margin-bottom: 15px;
-}
-
-.sidebar {
-  width: 150px;
-  background-color: #182b3b;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 .about-us-link a {
